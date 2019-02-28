@@ -4,7 +4,7 @@ This is the repository for 2019 Spring Course on Ethereum Smart Contracts Applic
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -25,6 +25,16 @@ In the `BackEnd` folder, run the following command:
 ```
 pip install -r requirements.txt
 ```
+Also, you need a free mongoDB account in order to use the backend.
+Once you get the database link, make sure to add a file at
+`BackEnd/constants/authInfo.py` as the following:
+
+```python
+mongoDB_Auth = "mongodb://YOUR_DB_LINK"
+```
+The official documentation of mongoDB is at
+
+[Connect to MongoDB](https://docs.mongodb.com/guides/server/drivers/)
 
 #### Solidity_Part
 
@@ -36,16 +46,7 @@ truffle migrate
 
 ### Installing
 
-You need a free mongoDB account in order to use the backend.
-Once you get the database link, make sure to add a file at
-`BackEnd/constants/authInfo.py` as the following:
 
-```python
-mongoDB_Auth = "mongodb://YOUR_DB_LINK"
-```
-The official documentation of mongoDB is at
-
-[Connect to MongoDB](https://docs.mongodb.com/guides/server/drivers/)
 
 
 End with an example of getting some data out of the system or using it for a little demo
