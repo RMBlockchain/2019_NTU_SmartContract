@@ -12,17 +12,26 @@ In this lecture, you need to install the following: flask npm vue bootstrap-vue
 
 #### Front-End
 
+In the `FrontEnd` folder, run the following command:
+
 ```
 npm install 
 ```
 
 #### Back-End
 
+In the `BackEnd` folder, run the following command:
+
 ```
-pip install flask
+pip install -r requirements.txt
 ```
+
+#### Solidity_Part
+
+In the `Solidity_Part` folder, run the following command:
+
 ```
-pip install pymongo
+truffle migrate
 ```
 
 ### Installing
@@ -34,12 +43,10 @@ Once you get the database link, make sure to add a file at
 ```python
 mongoDB_Auth = "mongodb://YOUR_DB_LINK"
 ```
+The official documentation of mongoDB is at
 
-And repeat
+[Connect to MongoDB](https://docs.mongodb.com/guides/server/drivers/)
 
-```
-until finished
-```
 
 End with an example of getting some data out of the system or using it for a little demo
 
