@@ -3,9 +3,11 @@ from flask_cors import CORS
 from pymongo import MongoClient
 import json
 
+from constants.authInfo import mongoDB_Auth
+print(mongoDB_Auth)
 ## mongoDB
 ## Modify the auth token
-client = MongoClient("mongodb://law_ai_test:3EEkFTPq6MdM9qTd@samuel-shard-00-00-ysbfm.mongodb.net:27017,samuel-shard-00-01-ysbfm.mongodb.net:27017,samuel-shard-00-02-ysbfm.mongodb.net:27017/test?ssl=true&replicaSet=Samuel-shard-0&authSource=admin&retryWrites=true")
+client = MongoClient(mongoDB_Auth)
 
 app = Flask(__name__)
 CORS(app)
@@ -54,7 +56,7 @@ def retrieveBuyingFromDB():
 if __name__ == '__main__':
 	from argparse import ArgumentParser
 	parser = ArgumentParser()
-	parser.add_argument("-p", "--port", type = int, default = 5001)
+	parser.add_argument("-p", "--port", type = int, default = 5003)
 	args = parser.parse_args()
 	port = args.port
 	app.run(host = "127.0.0.1", port = port)
