@@ -2,6 +2,7 @@ from flask import Flask , jsonify, request
 from flask_cors import CORS 
 from pymongo import MongoClient
 import json
+import datetime
 
 from constants.authInfo import mongoDB_Auth
 print(mongoDB_Auth)
@@ -24,16 +25,37 @@ def get_ui():
 
 @app.route("/registerbuying", methods = ["GET"])
 def registerBuyingToDB():
-	rating = int(request.args.get('rating'))
-	print(rating)
-	db=client.businessTest
-	ratingItem = db.reviews.find_one({'rating': rating})
-	print(ratingItem)
-	ratingCount = db.reviews.find({'rating': rating}).count()
-	print(ratingCount)
+	buyerAddress = request.args.get('address')
+	print("Buyer Address : " + buyerAddress)
+
+	productName = request.args.get('productName')
+	print("Product Name : " + productName)
+
+	productID = int(request.args.get('productID'))
+	print("Product ID : " + str(productID))
+
+	quantity = int(request.args.get('quantity'))
+	print("Quantity : " + str(quantity))
+
+	amount = int(request.args.get('amount'))
+	print("Amount : " + str(amount))
+
+	timeStamp = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+	print("timeStamp : " + timeStamp)
+
 	response = {
-	"ratingItem":ratingItem,
-	"ratingCount":ratingCount}
+	"buyerAddress":buyerAddress,
+	"productName":productName,
+	"productID":productID,
+	"quantity":quantity,
+	"amount":amount,
+	"timeStamp":timeStamp,
+	}
+
+	# Insert to mongoDB
+	db=client.ntuSolidityCourse
+	result=db.sellDigitalGoods.insert_one(response)
+	print('Created a data with ID {}'.format(result.inserted_id))
 	return str(response)
 
 @app.route("/retrievebuying", methods = ["GET"])

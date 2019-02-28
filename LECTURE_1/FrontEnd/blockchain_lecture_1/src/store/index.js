@@ -4,13 +4,7 @@ import state from './state'
 import getWeb3 from '../util/getWeb3'
 import pollWeb3 from '../util/pollWeb3'
 
-// import getGXTokenContract from '../util/getGXTokenContract'
-// import getPortalContract from '../util/getPortalContract'
-// import getSellingContract from '../util/getSellingContract'
-// import getRentalContract from '../util/getRentalContract'
-// import getCycleMinerContract from '../util/getCycleMinerContract'
-
-
+import getSellingContract from '../util/getSellingContract'
 
 Vue.use(Vuex)
 
@@ -34,7 +28,11 @@ export const store = new Vuex.Store({
       console.log('pollWeb3Instance mutation being executed', payload)
       state.web3.coinbase = payload.coinbase
       state.web3.balance = parseInt(payload.balance, 10)
-    }
+    },
+    registerSellingContractInstance (state, payload) {
+      console.log('Selling contract instance: ', payload)
+      state.SellingContractInstance = () => payload
+    },
   },
   actions: {
     registerWeb3 ({commit}) {
@@ -49,6 +47,11 @@ export const store = new Vuex.Store({
     pollWeb3 ({commit}, payload) {
      console.log('pollWeb3 action being executed')
      commit('pollWeb3Instance', payload)
-    }
+    },
+    getSellingContractInstance ({commit}) {
+       getSellingContract().then(result => {
+       commit('registerSellingContractInstance', result)
+       }).catch(e => console.log(e))
+    },
   }
 })
