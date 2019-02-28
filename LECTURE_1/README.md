@@ -10,8 +10,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 In this lecture, you need to install the following: flask npm vue bootstrap-vue
 
+#### Back-End
+
 ```
-Give examples
+pip install flask
+```
+```
+pip install pymongo
 ```
 
 ### Installing
