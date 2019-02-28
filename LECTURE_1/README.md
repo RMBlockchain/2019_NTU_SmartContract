@@ -10,6 +10,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 In this lecture, you need to install the following: flask npm vue bootstrap-vue
 
+#### Front-End
+
+```
+npm install 
+```
+
 #### Back-End
 
 ```
@@ -21,12 +27,12 @@ pip install pymongo
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+You need a free mongoDB account in order to use the backend.
+Once you get the database link, make sure to add a file at
+`BackEnd/constants/authInfo.py` as the following:
 
-Say what the step will be
-
-```
-Give the example
+```python
+mongoDB_Auth = "mongodb://YOUR_DB_LINK"
 ```
 
 And repeat
