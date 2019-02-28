@@ -12,10 +12,14 @@ In this lecture, you need to install the following: flask npm vue bootstrap-vue
 
 #### Front-End
 
-In the `FrontEnd` folder, run the following command:
+In the `FrontEnd/blockchain_lecture_1` folder, run the following command:
 
-```
-npm install 
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8091
+npm run dev
 ```
 
 #### Back-End
@@ -25,6 +29,7 @@ In the `BackEnd` folder, run the following command:
 ```
 pip install -r requirements.txt
 ```
+
 Also, you need a free mongoDB account in order to use the backend.
 Once you get the database link, make sure to add a file at
 `BackEnd/constants/authInfo.py` as the following:
@@ -35,6 +40,12 @@ mongoDB_Auth = "mongodb://YOUR_DB_LINK"
 The official documentation of mongoDB is at
 
 [Connect to MongoDB](https://docs.mongodb.com/guides/server/drivers/)
+
+Run a local instance:
+
+``` bash
+python app.py
+```
 
 #### Solidity_Part
 
@@ -63,7 +74,7 @@ var address = "YOUR CONTRACT ADDRESS";
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+to be updated
 
 
 ## Authors
