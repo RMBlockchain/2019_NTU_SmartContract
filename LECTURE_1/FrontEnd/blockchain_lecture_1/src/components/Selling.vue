@@ -8,7 +8,15 @@
         <hr>
         <br>
         <br>
-        <div>
+        <div v-if='buyingSuccess'>
+          <h3> Buying Success ! </h3>
+          <h4> Receipt: </h4>
+          <h5> {{ buyingReceipt }}</h5>
+        </div>
+        <div v-if='spinnerShow'>
+          <b-spinner label="Loading..." />
+        </div>
+        <div v-if='productInfoShow'>
           <h3> 商品介紹 </h3>
             <div>
               <b-card :title='getSellingContractProductInfo.productName'>
@@ -35,18 +43,21 @@
 
               </b-card>
             </div>
+            <br>
+            <div>
+              <b-button-group size="lg">
+                <b-button v-on:click="buyItem">購買商品</b-button>
+              </b-button-group>
+            </div>
         </div>
         <hr>
-        <div>
-          <b-button-group size="lg">
-            <b-button v-on:click="buyItem">購買商品</b-button>
-          </b-button-group>
-        </div>
+        
     </div>
 
 </template>
 
 <script>
+import axios from 'axios'
 import {mapState} from 'vuex'
 import {NETWORKS} from '../util/constants/networks'
 import MetaMask from '@/components/MetaMask'
@@ -107,6 +118,10 @@ export default {
 
   data () {
     return {
+      spinnerShow:false,
+      productInfoShow:true,
+      buyingSuccess:false,
+      buyingReceipt:null
     }
   },
 
@@ -116,6 +131,8 @@ export default {
       // Should update web3js for the bug
       // waiting for NPM update
       event.preventDefault()
+      this.productInfoShow = false
+      this.spinnerShow = true
       console.log("buyItem")
       const address = this.coinbase
       const productName = this.getSellingContractProductInfo.productName
@@ -127,7 +144,13 @@ export default {
         console.log(_receipt)
         // update to mongoDB
         // call API
-        window.location.replace(path)
+        // window.location.replace(path)
+        return axios.get(path)
+      }).then((_response) => {
+        console.log(_response.data)
+        this.buyingReceipt = _response.data
+        this.spinnerShow = false
+        this.buyingSuccess = true
       })
       
   
