@@ -11,6 +11,9 @@ import datetime
 
 from constants.authInfo import mongoDB_Auth
 print(mongoDB_Auth)
+from constants.contracts import Selling
+#print(Selling.abi)
+
 ## mongoDB
 ## Modify the auth token
 client = MongoClient(mongoDB_Auth)
@@ -65,9 +68,8 @@ def registerBuyingToDB():
 
 @app.route("/retrievebuying", methods = ["GET"])
 def retrieveBuyingFromDB():
-	# Initialize Contract 
+	# Initial web3 instance 
 	web3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
-
 	# Verify Signature
 	message = "Hello World!"
 	messageHash = defunct_hash_message(text = message)
@@ -79,7 +81,14 @@ def retrieveBuyingFromDB():
 	print(recoveredAddress)
 	print(userSentAddress)
 
-	if recoveredAddress.lower() == userSentAddress:
+	# Initialize and Check Contract 
+	sellingContractABI = Selling.abi
+	sellingContractAddress = '0x26a9Cf48AcdbAb845700c9292F709a5d67C0B9b3'
+	SellingContract = web3.eth.contract(address=sellingContractAddress, abi=sellingContractABI)
+	whether_buy = SellingContract.functions.buyer(recoveredAddress).call()
+	#print(type(whether_buy))
+
+	if recoveredAddress.lower() == userSentAddress and whether_buy == True:
 		print("Verified Success")
 		return str(1)
 	else:

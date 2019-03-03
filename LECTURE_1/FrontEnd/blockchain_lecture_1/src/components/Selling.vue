@@ -54,6 +54,9 @@
               <b-button-group size="lg">
                 <b-button v-on:click="buyItem">購買商品</b-button>
               </b-button-group>
+              <b-button-group size="lg">
+                <b-button v-on:click="getItem">領取商品</b-button>
+              </b-button-group>
             </div>
         </div>
         <hr>
@@ -159,8 +162,11 @@ export default {
 
       let _response = await axios.get(path)
       console.log(_response)
-
-
+      if (_response.data == 1) {
+        console.log("Verified Buying Success")
+      }else{
+        console.log("Verified Buying Fail")
+      }
 
     },
 
