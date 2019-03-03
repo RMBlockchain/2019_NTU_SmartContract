@@ -1,8 +1,13 @@
 from flask import Flask , jsonify, request
 from flask_cors import CORS 
 from pymongo import MongoClient
+
+from web3 import Web3
+from eth_account.messages import defunct_hash_message
+
 import json
 import datetime
+
 
 from constants.authInfo import mongoDB_Auth
 print(mongoDB_Auth)
@@ -60,18 +65,38 @@ def registerBuyingToDB():
 
 @app.route("/retrievebuying", methods = ["GET"])
 def retrieveBuyingFromDB():
-	rating = int(request.args.get('rating'))
-	print(rating)
-	db=client.businessTest
-	ratingItems = db.reviews.find({'rating': rating})
-	res = []
-	for item in ratingItems:
-		try: 
-			del item["_id"]
-		except KeyError: 
-			pass
-		res.append(item)
-	return str(res)
+	# Initialize Contract 
+	web3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
+
+	# Verify Signature
+	message = "Hello World!"
+	messageHash = defunct_hash_message(text = message)
+
+	signature = request.args.get('signature')
+	userSentAddress = request.args.get('address')
+
+	recoveredAddress = web3.eth.account.recoverHash(messageHash, signature=signature)
+	print(recoveredAddress)
+	print(userSentAddress)
+
+	if recoveredAddress.lower() == userSentAddress:
+		print("Verified Success")
+		return str(1)
+	else:
+		print("Verified Fail")
+		return str(0)
+	# rating = int(request.args.get('rating'))
+	# print(rating)
+	# db=client.businessTest
+	# ratingItems = db.reviews.find({'rating': rating})
+	# res = []
+	# for item in ratingItems:
+	# 	try: 
+	# 		del item["_id"]
+	# 	except KeyError: 
+	# 		pass
+	# 	res.append(item)
+	# return str(res)
 
 
 

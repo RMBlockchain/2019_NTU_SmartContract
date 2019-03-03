@@ -12,6 +12,12 @@
           <h3> Buying Success ! </h3>
           <h4> Receipt: </h4>
           <h5> {{ buyingReceipt }}</h5>
+          <b-button-group size="lg">
+            <b-button v-on:click="getItem">領取商品</b-button>
+          </b-button-group>
+          <div v-if='verifiedBuyingSuccess'>
+            <h3> {{ itemDownloadLink }}</h3>
+          </div>
         </div>
         <div v-if='spinnerShow'>
           <b-spinner label="Loading..." />
@@ -61,6 +67,9 @@ import axios from 'axios'
 import {mapState} from 'vuex'
 import {NETWORKS} from '../util/constants/networks'
 import MetaMask from '@/components/MetaMask'
+
+import Web3 from 'web3'
+
 export default {
   beforeCreate () {
     console.log('registerWeb3 Action dispatched from ContractTest.vue')
@@ -121,11 +130,40 @@ export default {
       spinnerShow:false,
       productInfoShow:true,
       buyingSuccess:false,
-      buyingReceipt:null
+      buyingReceipt:null,
+      verifiedBuyingSuccess:false,
+      itemDownloadLink:null,
+
     }
   },
 
   methods: {
+    async getItem(event) {
+      event.preventDefault()
+      console.log("getItem")
+      // Sign a message 
+      let web3 = window.web3
+      web3 = new Web3(web3.currentProvider)
+      const message = "Hello World!"
+      const messageHex = web3.utils.utf8ToHex(message)
+      console.log(messageHex)
+      let accounts = await web3.eth.getAccounts()
+      console.log(accounts)
+      let signature = await web3.eth.personal.sign(messageHex, accounts[0],"testPass")
+      console.log(signature)
+      // Send to backend
+      const address = this.coinbase
+
+      const path ='http://'+location.hostname+':5003/retrievebuying?address='+address+'&signature='+signature
+      console.log(path)
+
+      let _response = await axios.get(path)
+      console.log(_response)
+
+
+
+    },
+
     buyItem(event) {
       // Need to add error handling
       // Should update web3js for the bug
@@ -152,8 +190,6 @@ export default {
         this.spinnerShow = false
         this.buyingSuccess = true
       })
-      
-  
     }
   }
 }
