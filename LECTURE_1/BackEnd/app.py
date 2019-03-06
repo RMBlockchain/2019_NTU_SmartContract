@@ -14,6 +14,11 @@ print(mongoDB_Auth)
 from constants.contracts import Selling
 #print(Selling.abi)
 
+from eth_keys import KeyAPI
+from eth_keys.backends import NativeECCBackend
+keys = KeyAPI(NativeECCBackend)
+
+
 ## mongoDB
 ## Modify the auth token
 client = MongoClient(mongoDB_Auth)
@@ -80,6 +85,16 @@ def retrieveBuyingFromDB():
 	recoveredAddress = web3.eth.account.recoverHash(messageHash, signature=signature)
 	print(recoveredAddress)
 	print(userSentAddress)
+	
+	## Bytes Length ???
+	signatureBytes = signature.encode()
+	print(type(signatureBytes))
+	print(len(signatureBytes))
+	signatureInstance = keys.Signature(signature_bytes=signatureBytes)
+	messageHashByte = messageHash.encode()
+	print(type(messageHashByte))
+	userPublicKey = keys.ecdsa_recover(message_hash = messageHashByte, signature = signatureInstance)
+	print(userPublicKey)
 
 	# Initialize and Check Contract 
 	sellingContractABI = Selling.abi

@@ -58,7 +58,7 @@ truffle migrate
 ### Installing
 
 In the previous part, you should get a contract address for the `Selling.sol`, copy
-this address and then put it in `FrontEnd/blockchain_lecture_1/util/constants/contracts/Selling.js`
+this address and then put it in `FrontEnd/blockchain_lecture_1/src/util/constants/contracts/Selling.js`
 
 Change the original code which is:
 
