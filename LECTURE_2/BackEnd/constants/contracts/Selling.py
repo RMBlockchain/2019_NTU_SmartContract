@@ -1,6 +1,5 @@
-var address = "0x53d876C5143ee7C3bdcc29e5CaECfb4170db0E84";
-
-const ABI = [
+abi = '''
+[
     {
       "constant": true,
       "inputs": [],
@@ -140,7 +139,4 @@ const ABI = [
       "signature": "0xc0258191"
     }
   ]
-
-
-
-export {address, ABI}
+'''

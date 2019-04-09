@@ -1,4 +1,4 @@
-# NTU Smart Contract Course Code and Slides
+# NTU Smart Contract Course Code
 
 This is the repository for 2019 Spring Course on Ethereum Smart Contracts Applications in National Taiwan University offered by Prof. Pecu Tsai and partly lectured by Samuel (Yen-Chi) Chen
 
@@ -54,6 +54,9 @@ In the `Solidity_Part` folder, run the following command:
 ```
 truffle migrate
 ```
+
+After running this command, you will see "contract address" in the console. Please copy it.
+
 
 ### Installing
 
