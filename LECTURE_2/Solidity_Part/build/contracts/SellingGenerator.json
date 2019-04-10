@@ -1,0 +1,1122 @@
+{
+  "contractName": "SellingGenerator",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_newContract",
+          "type": "address"
+        }
+      ],
+      "name": "newSelling",
+      "type": "event",
+      "signature": "0x8abd2b9b75c82f4d24d44b0ebea2edbe5fabbb3f525baae6a39b61bd79de02d0"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_seller",
+          "type": "address"
+        },
+        {
+          "name": "_price",
+          "type": "uint256"
+        },
+        {
+          "name": "_productName",
+          "type": "string"
+        }
+      ],
+      "name": "sellingContractGenerator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xa6412597"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610909806100606000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a641259714610046575b600080fd5b34801561005257600080fd5b506101366004803603606081101561006957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001906401000000008111156100b057600080fd5b8201836020820111156100c257600080fd5b803590602001918460018302840111640100000000831117156100e457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610138565b005b6000838383610145610276565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101ba57808201518184015260208101905061019f565b50505050905090810190601f1680156101e75780820380516001836020036101000a031916815260200191505b50945050505050604051809103906000f08015801561020a573d6000803e3d6000fd5b5090507f8abd2b9b75c82f4d24d44b0ebea2edbe5fabbb3f525baae6a39b61bd79de02d081604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150505050565b604051610657806102878339019056fe608060405234801561001057600080fd5b506040516106573803806106578339810180604052606081101561003357600080fd5b810190808051906020019092919080519060200190929190805164010000000081111561005f57600080fd5b8281019050602081018481111561007557600080fd5b815185600182028301116401000000008211171561009257600080fd5b5050929190505050826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508160038190555080600490805190602001906100f792919061011b565b506001600560006101000a81548160ff0219169083151502179055505050506101c0565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061015c57805160ff191683800117855561018a565b8280016001018555821561018a579182015b8281111561018957825182559160200191906001019061016e565b5b509050610197919061019b565b5090565b6101bd91905b808211156101b95760008160009055506001016101a1565b5090565b90565b610488806101cf6000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806308551a53146100885780630c6b6737146100df5780637f7650eb1461010a578063a035b1fe1461019a578063b7748208146101c5578063c02581911461022e578063e289fcb614610238575b600080fd5b34801561009457600080fd5b5061009d610267565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100eb57600080fd5b506100f461028c565b6040518082815260200191505060405180910390f35b34801561011657600080fd5b5061011f610292565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015f578082015181840152602081019050610144565b50505050905090810190601f16801561018c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101a657600080fd5b506101af610330565b6040518082815260200191505060405180910390f35b3480156101d157600080fd5b50610214600480360360208110156101e857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610336565b604051808215151515815260200191505060405180910390f35b610236610356565b005b34801561024457600080fd5b5061024d610449565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60025481565b60048054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103285780601f106102fd57610100808354040283529160200191610328565b820191906000526020600020905b81548152906001019060200180831161030b57829003601f168201915b505050505081565b60035481565b60016020528060005260406000206000915054906101000a900460ff1681565b600560009054906101000a900460ff16151561037157600080fd5b6003543414151561038157600080fd5b60018060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055506001600254016002819055507ffbd6287d9242307b2750fc8252314857896e312d167cdbc9eed322bae8828e0033604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a1565b600560009054906101000a900460ff168156fea165627a7a72305820222e093c849faa56590f85993b28387a2bc76a69172a978702618c498ed434e20029a165627a7a72305820d45998f06a921260110e31217fcc388adf41e9b99edcff165f240a7eeff0566f0029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a641259714610046575b600080fd5b34801561005257600080fd5b506101366004803603606081101561006957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001906401000000008111156100b057600080fd5b8201836020820111156100c257600080fd5b803590602001918460018302840111640100000000831117156100e457600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610138565b005b6000838383610145610276565b808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b838110156101ba57808201518184015260208101905061019f565b50505050905090810190601f1680156101e75780820380516001836020036101000a031916815260200191505b50945050505050604051809103906000f08015801561020a573d6000803e3d6000fd5b5090507f8abd2b9b75c82f4d24d44b0ebea2edbe5fabbb3f525baae6a39b61bd79de02d081604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150505050565b604051610657806102878339019056fe608060405234801561001057600080fd5b506040516106573803806106578339810180604052606081101561003357600080fd5b810190808051906020019092919080519060200190929190805164010000000081111561005f57600080fd5b8281019050602081018481111561007557600080fd5b815185600182028301116401000000008211171561009257600080fd5b5050929190505050826000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055508160038190555080600490805190602001906100f792919061011b565b506001600560006101000a81548160ff0219169083151502179055505050506101c0565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061015c57805160ff191683800117855561018a565b8280016001018555821561018a579182015b8281111561018957825182559160200191906001019061016e565b5b509050610197919061019b565b5090565b6101bd91905b808211156101b95760008160009055506001016101a1565b5090565b90565b610488806101cf6000396000f3fe608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806308551a53146100885780630c6b6737146100df5780637f7650eb1461010a578063a035b1fe1461019a578063b7748208146101c5578063c02581911461022e578063e289fcb614610238575b600080fd5b34801561009457600080fd5b5061009d610267565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100eb57600080fd5b506100f461028c565b6040518082815260200191505060405180910390f35b34801561011657600080fd5b5061011f610292565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015f578082015181840152602081019050610144565b50505050905090810190601f16801561018c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101a657600080fd5b506101af610330565b6040518082815260200191505060405180910390f35b3480156101d157600080fd5b50610214600480360360208110156101e857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610336565b604051808215151515815260200191505060405180910390f35b610236610356565b005b34801561024457600080fd5b5061024d610449565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60025481565b60048054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103285780601f106102fd57610100808354040283529160200191610328565b820191906000526020600020905b81548152906001019060200180831161030b57829003601f168201915b505050505081565b60035481565b60016020528060005260406000206000915054906101000a900460ff1681565b600560009054906101000a900460ff16151561037157600080fd5b6003543414151561038157600080fd5b60018060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055506001600254016002819055507ffbd6287d9242307b2750fc8252314857896e312d167cdbc9eed322bae8828e0033604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a1565b600560009054906101000a900460ff168156fea165627a7a72305820222e093c849faa56590f85993b28387a2bc76a69172a978702618c498ed434e20029a165627a7a72305820d45998f06a921260110e31217fcc388adf41e9b99edcff165f240a7eeff0566f0029",
+  "sourceMap": "58:359:2:-;;;113:47;8:9:-1;5:2;;;30:1;27;20:12;5:2;113:47:2;146:10;138:5;;:18;;;;;;;;;;;;;;;;;;58:359;;;;;;",
+  "deployedSourceMap": "58:359:2:-;;;;;;;;;;;;;;;;;;;;;;;;207:208;;8:9:-1;5:2;;;30:1;27;20:12;5:2;207:208:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;207:208:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;207:208:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;207:208:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;207:208:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;207:208:2;;;;;;;;;;;;;;;;;;;313:20;348:7;357:6;365:12;336:42;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;336:42:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;336:42:2;313:65;;387:24;398:12;387:24;;;;;;;;;;;;;;;;;;;;;;207:208;;;;:::o;58:359::-;;;;;;;;;;:::o",
+  "source": "pragma solidity >0.4.99 <0.6.0;\n\nimport \"./Selling.sol\";\n\ncontract SellingGenerator {\n\n\taddress private owner;\n\n\tconstructor() public {\n\t\towner = msg.sender;\n\t}\n\n\tevent newSelling(\n\tSelling _newContract);\n\n\tfunction sellingContractGenerator(address _seller, uint256 _price, string memory _productName) public {\n\t\tSelling _newContract = new Selling(_seller, _price, _productName);\n\t\temit newSelling(_newContract);\n\t}\n}",
+  "sourcePath": "/Users/ycchen/Desktop/Programming_Exercise/2019_NTU_SMART_CONTRACTS/LECTURE_2/Solidity_Part/contracts/SellingGenerator.sol",
+  "ast": {
+    "absolutePath": "/Users/ycchen/Desktop/Programming_Exercise/2019_NTU_SMART_CONTRACTS/LECTURE_2/Solidity_Part/contracts/SellingGenerator.sol",
+    "exportedSymbols": {
+      "SellingGenerator": [
+        178
+      ]
+    },
+    "id": 179,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 138,
+        "literals": [
+          "solidity",
+          ">",
+          "0.4",
+          ".99",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:2"
+      },
+      {
+        "absolutePath": "/Users/ycchen/Desktop/Programming_Exercise/2019_NTU_SMART_CONTRACTS/LECTURE_2/Solidity_Part/contracts/Selling.sol",
+        "file": "./Selling.sol",
+        "id": 139,
+        "nodeType": "ImportDirective",
+        "scope": 179,
+        "sourceUnit": 137,
+        "src": "33:23:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          136
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 178,
+        "linearizedBaseContracts": [
+          178
+        ],
+        "name": "SellingGenerator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 141,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 178,
+            "src": "88:21:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 140,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "88:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 149,
+              "nodeType": "Block",
+              "src": "134:26:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 144,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 141,
+                      "src": "138:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 145,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 193,
+                        "src": "146:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 146,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "146:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "138:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 148,
+                  "nodeType": "ExpressionStatement",
+                  "src": "138:18:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 150,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 142,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "124:2:2"
+            },
+            "returnParameters": {
+              "id": 143,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "134:0:2"
+            },
+            "scope": 178,
+            "src": "113:47:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 154,
+            "name": "newSelling",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 153,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 152,
+                  "indexed": false,
+                  "name": "_newContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "182:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Selling_$136",
+                    "typeString": "contract Selling"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 151,
+                    "name": "Selling",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 136,
+                    "src": "182:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Selling_$136",
+                      "typeString": "contract Selling"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:24:2"
+            },
+            "src": "163:41:2"
+          },
+          {
+            "body": {
+              "id": 176,
+              "nodeType": "Block",
+              "src": "309:106:2",
+              "statements": [
+                {
+                  "assignments": [
+                    164
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 164,
+                      "name": "_newContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 176,
+                      "src": "313:20:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Selling_$136",
+                        "typeString": "contract Selling"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 163,
+                        "name": "Selling",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 136,
+                        "src": "313:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 171,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 167,
+                        "name": "_seller",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 156,
+                        "src": "348:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 168,
+                        "name": "_price",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 158,
+                        "src": "357:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 169,
+                        "name": "_productName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 160,
+                        "src": "365:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 166,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "336:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$_t_contract$_Selling_$136_$",
+                        "typeString": "function (address,uint256,string memory) returns (contract Selling)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 165,
+                        "name": "Selling",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 136,
+                        "src": "340:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      }
+                    },
+                    "id": 170,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "336:42:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Selling_$136",
+                      "typeString": "contract Selling"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "313:65:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 173,
+                        "name": "_newContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 164,
+                        "src": "398:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      ],
+                      "id": 172,
+                      "name": "newSelling",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 154,
+                      "src": "387:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Selling_$136_$returns$__$",
+                        "typeString": "function (contract Selling)"
+                      }
+                    },
+                    "id": 174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "387:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 175,
+                  "nodeType": "EmitStatement",
+                  "src": "382:29:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 177,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sellingContractGenerator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 161,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 156,
+                  "name": "_seller",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 177,
+                  "src": "241:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 155,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "241:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 158,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 177,
+                  "src": "258:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 157,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 160,
+                  "name": "_productName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 177,
+                  "src": "274:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 159,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "240:61:2"
+            },
+            "returnParameters": {
+              "id": 162,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "309:0:2"
+            },
+            "scope": 178,
+            "src": "207:208:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 179,
+        "src": "58:359:2"
+      }
+    ],
+    "src": "0:417:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/ycchen/Desktop/Programming_Exercise/2019_NTU_SMART_CONTRACTS/LECTURE_2/Solidity_Part/contracts/SellingGenerator.sol",
+    "exportedSymbols": {
+      "SellingGenerator": [
+        178
+      ]
+    },
+    "id": 179,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 138,
+        "literals": [
+          "solidity",
+          ">",
+          "0.4",
+          ".99",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:2"
+      },
+      {
+        "absolutePath": "/Users/ycchen/Desktop/Programming_Exercise/2019_NTU_SMART_CONTRACTS/LECTURE_2/Solidity_Part/contracts/Selling.sol",
+        "file": "./Selling.sol",
+        "id": 139,
+        "nodeType": "ImportDirective",
+        "scope": 179,
+        "sourceUnit": 137,
+        "src": "33:23:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          136
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 178,
+        "linearizedBaseContracts": [
+          178
+        ],
+        "name": "SellingGenerator",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 141,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 178,
+            "src": "88:21:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 140,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "88:7:2",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 149,
+              "nodeType": "Block",
+              "src": "134:26:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 144,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 141,
+                      "src": "138:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 145,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 193,
+                        "src": "146:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 146,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "146:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "138:18:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 148,
+                  "nodeType": "ExpressionStatement",
+                  "src": "138:18:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 150,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 142,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "124:2:2"
+            },
+            "returnParameters": {
+              "id": 143,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "134:0:2"
+            },
+            "scope": 178,
+            "src": "113:47:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 154,
+            "name": "newSelling",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 153,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 152,
+                  "indexed": false,
+                  "name": "_newContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 154,
+                  "src": "182:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Selling_$136",
+                    "typeString": "contract Selling"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 151,
+                    "name": "Selling",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 136,
+                    "src": "182:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Selling_$136",
+                      "typeString": "contract Selling"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:24:2"
+            },
+            "src": "163:41:2"
+          },
+          {
+            "body": {
+              "id": 176,
+              "nodeType": "Block",
+              "src": "309:106:2",
+              "statements": [
+                {
+                  "assignments": [
+                    164
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 164,
+                      "name": "_newContract",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 176,
+                      "src": "313:20:2",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Selling_$136",
+                        "typeString": "contract Selling"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 163,
+                        "name": "Selling",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 136,
+                        "src": "313:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 171,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 167,
+                        "name": "_seller",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 156,
+                        "src": "348:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 168,
+                        "name": "_price",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 158,
+                        "src": "357:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 169,
+                        "name": "_productName",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 160,
+                        "src": "365:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 166,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "336:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$returns$_t_contract$_Selling_$136_$",
+                        "typeString": "function (address,uint256,string memory) returns (contract Selling)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 165,
+                        "name": "Selling",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 136,
+                        "src": "340:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      }
+                    },
+                    "id": 170,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "336:42:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Selling_$136",
+                      "typeString": "contract Selling"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "313:65:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 173,
+                        "name": "_newContract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 164,
+                        "src": "398:12:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Selling_$136",
+                          "typeString": "contract Selling"
+                        }
+                      ],
+                      "id": 172,
+                      "name": "newSelling",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 154,
+                      "src": "387:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_contract$_Selling_$136_$returns$__$",
+                        "typeString": "function (contract Selling)"
+                      }
+                    },
+                    "id": 174,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "387:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 175,
+                  "nodeType": "EmitStatement",
+                  "src": "382:29:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 177,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sellingContractGenerator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 161,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 156,
+                  "name": "_seller",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 177,
+                  "src": "241:15:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 155,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "241:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 158,
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 177,
+                  "src": "258:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 157,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 160,
+                  "name": "_productName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 177,
+                  "src": "274:26:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 159,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "240:61:2"
+            },
+            "returnParameters": {
+              "id": 162,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "309:0:2"
+            },
+            "scope": 178,
+            "src": "207:208:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 179,
+        "src": "58:359:2"
+      }
+    ],
+    "src": "0:417:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x447510b73e91dEEC4309F2e29A26fA2606898Bdf",
+      "transactionHash": "0xeed9cadc83184acaacc2dc7750cfe8dc9cb69877b0d5ac540718d30b723feead"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-04-10T00:12:47.282Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

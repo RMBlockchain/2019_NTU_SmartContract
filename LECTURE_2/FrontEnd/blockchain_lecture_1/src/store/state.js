@@ -7,6 +7,7 @@ let state = {
  balance: null,
  error: null
  },
- SellingContractInstance: null
+ SellingContractInstance: null,
+ SellingGeneratorInstance: null,
 }
 export default state

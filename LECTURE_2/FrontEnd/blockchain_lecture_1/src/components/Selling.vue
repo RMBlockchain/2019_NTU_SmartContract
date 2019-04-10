@@ -79,6 +79,8 @@ export default {
     this.$store.dispatch('registerWeb3')
     console.log('LOADING Selling Contract Instance ')
     this.$store.dispatch('getSellingContractInstance')
+    console.log('LOADING Selling Contract Instance ')
+    this.$store.dispatch('getSellingContractInstance',this.$route.query.contract)
   },
   mounted() {
   },

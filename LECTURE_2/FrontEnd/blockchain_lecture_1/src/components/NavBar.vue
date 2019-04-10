@@ -33,6 +33,11 @@ export default {
         path:"/sell",
         linkTitle:"Sell",
       },
+      {
+        id:2,
+        path:"/sellinggen",
+        linkTitle:"Selling Gen",
+      },
       ]
     }
   }

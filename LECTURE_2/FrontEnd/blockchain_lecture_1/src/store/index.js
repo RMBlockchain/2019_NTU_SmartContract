@@ -5,6 +5,7 @@ import getWeb3 from '../util/getWeb3'
 import pollWeb3 from '../util/pollWeb3'
 
 import getSellingContract from '../util/getSellingContract'
+import getSellingGenerator from '../util/getSellingGenerator'
 
 Vue.use(Vuex)
 
@@ -33,6 +34,10 @@ export const store = new Vuex.Store({
       console.log('Selling contract instance: ', payload)
       state.SellingContractInstance = () => payload
     },
+    registerSellingGeneratorInstance (state, payload) {
+      console.log('Selling Generator contract instance: ', payload)
+      state.SellingGeneratorInstance = () => payload
+    },
   },
   actions: {
     registerWeb3 ({commit}) {
@@ -48,9 +53,14 @@ export const store = new Vuex.Store({
      console.log('pollWeb3 action being executed')
      commit('pollWeb3Instance', payload)
     },
-    getSellingContractInstance ({commit}) {
-       getSellingContract().then(result => {
+    getSellingContractInstance ({commit}, address) {
+       getSellingContract(address).then(result => {
        commit('registerSellingContractInstance', result)
+       }).catch(e => console.log(e))
+    },
+    getSellingGeneratorInstance ({commit}) {
+       getSellingGenerator().then(result => {
+       commit('registerSellingGeneratorInstance', result)
        }).catch(e => console.log(e))
     },
   }
