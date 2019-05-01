@@ -6,6 +6,7 @@ import pollWeb3 from '../util/pollWeb3'
 
 import getSellingContract from '../util/getSellingContract'
 import getSellingGenerator from '../util/getSellingGenerator'
+import getPecuCoinContract from '../util/getPecuCoinContract'
 
 Vue.use(Vuex)
 
@@ -38,6 +39,10 @@ export const store = new Vuex.Store({
       console.log('Selling Generator contract instance: ', payload)
       state.SellingGeneratorInstance = () => payload
     },
+    registerPecuCoinContractInstance (state, payload) {
+      console.log('PecuCoin contract instance: ', payload)
+      state.PecuCoinContractInstance = () => payload
+    },
   },
   actions: {
     registerWeb3 ({commit}) {
@@ -61,6 +66,11 @@ export const store = new Vuex.Store({
     getSellingGeneratorInstance ({commit}) {
        getSellingGenerator().then(result => {
        commit('registerSellingGeneratorInstance', result)
+       }).catch(e => console.log(e))
+    },
+    getPecuCoinContractInstance ({commit}) {
+       getPecuCoinContract.then(result => {
+       commit('registerPecuCoinContractInstance', result)
        }).catch(e => console.log(e))
     },
   }

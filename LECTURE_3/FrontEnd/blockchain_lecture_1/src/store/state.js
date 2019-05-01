@@ -9,5 +9,6 @@ let state = {
  },
  SellingContractInstance: null,
  SellingGeneratorInstance: null,
+ PecuCoinContractInstance: null,
 }
 export default state

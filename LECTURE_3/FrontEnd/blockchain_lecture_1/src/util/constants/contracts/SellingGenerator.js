@@ -1,8 +1,28 @@
-var address = "0x447510b73e91dEEC4309F2e29A26fA2606898Bdf";
+var address = "0x7d16AC5F52172b3c52680B623A7a373296426900";
 
 const ABI = [
     {
+      "constant": true,
       "inputs": [],
+      "name": "tokenContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x55a373d6"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_tokenContract",
+          "type": "address"
+        }
+      ],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor",

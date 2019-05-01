@@ -29,11 +29,12 @@ contract Selling {
 		contractActive = true;
 	}
 
-	function buyItems() public payable {
+	function buyItems() public {
 		// pay firstPartAmount
 		// record the buyer
 		require(contractActive);
-		require(msg.value == price);
+		//require(msg.value == price);
+		require(tokenContract.transferFrom(msg.sender, address(this), price));
 		buyer[msg.sender] = true;
 		sellCount = sellCount + 1;
 		emit Sold(msg.sender);

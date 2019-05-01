@@ -39,7 +39,7 @@
 
                   <h5> 售價</h5>
                   <p class="card-text">
-                      {{ getSellingContractProductInfo.price }} WEI
+                      {{ getSellingContractProductInfo.price }} PEC
                   </p>
 
                   <h5> 已購買</h5>
@@ -81,6 +81,8 @@ export default {
     this.$store.dispatch('getSellingContractInstance')
     console.log('LOADING Selling Contract Instance ')
     this.$store.dispatch('getSellingContractInstance',this.$route.query.contract)
+    console.log('dispatching getPecuCoinContractInstance')
+    this.$store.dispatch('getPecuCoinContractInstance')
   },
   mounted() {
   },
@@ -186,18 +188,36 @@ export default {
       const quantity = 1
       const amount = this.getSellingContractProductInfo.price
       const path ='http://'+location.hostname+':5003/registerbuying?address='+address+'&productName='+productName+'&productID='+productID+'&quantity='+quantity+'&amount='+amount
-      this.$store.state.SellingContractInstance().methods.buyItems().send({from:this.coinbase,value:this.getSellingContractProductInfo.price}).then((_receipt) => {
+
+      this.$store.state.PecuCoinContractInstance().methods.approve(this.getSellingContractAddr,this.getSellingContractProductInfo.price).send({from:this.coinbase}).then((_receipt) => {
+        console.log("APPROVE RECEIPT")
         console.log(_receipt)
-        // update to mongoDB
-        // call API
-        // window.location.replace(path)
-        return axios.get(path)
-      }).then((_response) => {
-        console.log(_response.data)
-        this.buyingReceipt = _response.data
+        return this.$store.state.SellingContractInstance().methods.buyItems().send({from:this.coinbase})
+      }).then((_receipt) => {
+        console.log(_receipt)
         this.spinnerShow = false
         this.buyingSuccess = true
+
       })
+
+
+
+      // this.$store.state.SellingContractInstance().methods.buyItems().send({from:this.coinbase,value:this.getSellingContractProductInfo.price}).then((_receipt) => {
+      //   console.log(_receipt)
+      //   // update to mongoDB
+      //   // call API
+      //   // window.location.replace(path)
+      //   // return axios.get(path)
+      //   return 0
+      // }).then((_response) => {
+      //   //console.log(_response.data)
+      //   this.buyingReceipt = _response.data
+      //   this.spinnerShow = false
+      //   this.buyingSuccess = true
+      // })
+
+
+
     }
   }
 }

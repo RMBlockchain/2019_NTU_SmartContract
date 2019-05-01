@@ -13,8 +13,7 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x08551a53"
+      "type": "function"
     },
     {
       "constant": true,
@@ -28,8 +27,21 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x0c6b6737"
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tokenContract",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     },
     {
       "constant": true,
@@ -43,8 +55,7 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x7f7650eb"
+      "type": "function"
     },
     {
       "constant": true,
@@ -58,8 +69,7 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xa035b1fe"
+      "type": "function"
     },
     {
       "constant": true,
@@ -78,8 +88,7 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xb7748208"
+      "type": "function"
     },
     {
       "constant": true,
@@ -93,11 +102,14 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xe289fcb6"
+      "type": "function"
     },
     {
       "inputs": [
+        {
+          "name": "_tokenCotract",
+          "type": "address"
+        },
         {
           "name": "_seller",
           "type": "address"
@@ -113,8 +125,7 @@ const ABI = [
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor",
-      "signature": "constructor"
+      "type": "constructor"
     },
     {
       "anonymous": false,
@@ -126,18 +137,16 @@ const ABI = [
         }
       ],
       "name": "Sold",
-      "type": "event",
-      "signature": "0xfbd6287d9242307b2750fc8252314857896e312d167cdbc9eed322bae8828e00"
+      "type": "event"
     },
     {
       "constant": false,
       "inputs": [],
       "name": "buyItems",
       "outputs": [],
-      "payable": true,
-      "stateMutability": "payable",
-      "type": "function",
-      "signature": "0xc0258191"
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ]
 
